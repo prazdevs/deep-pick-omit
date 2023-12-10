@@ -1,8 +1,8 @@
 import { assocPath, dissocPath, path } from 'rambda'
 
-type Path<T, K extends keyof T = keyof T> = K extends string | number
-  ? T[K] extends infer R
-    ? `${K}`| (R extends Record<string, unknown> ? `${K}.${Path<R>}` : never)
+type Path<O, K extends keyof O = keyof O> = K extends string | number
+  ? O[K] extends infer V
+    ? `${K}`| (V extends Record<string, unknown> ? `${K}.${Path<V>}` : never)
     : never
   : never
 
