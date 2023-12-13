@@ -1,5 +1,3 @@
-import { dissocPath } from 'rambda'
-
 type Indexable<T = any> = Record<string | number, T>
 type Path<O, K extends keyof O = keyof O> = K extends string | number
   ? O[K] extends infer V
@@ -59,11 +57,12 @@ export function deepPickUnsafe(obj: object, paths: Array<string>) {
 export function deepPick<O extends object>(obj: O, paths: Array<Path<O>>) {
   return deepPickUnsafe(obj, paths)
 }
-export function deepOmitUnsafe(obj: object, paths: Array<string>) {
-  return paths
-    .reduce((acc, cur) => dissocPath(cur, acc), obj)
-}
 
-export function deepOmit<O extends object>(obj: O, paths: Array<Path<O>>) {
-  return deepOmitUnsafe(obj, paths)
-}
+// export function deepOmitUnsafe(obj: object, paths: Array<string>) {
+//   return paths
+//     .reduce((acc, cur) => dissocPath(cur, acc), obj)
+// }
+
+// export function deepOmit<O extends object>(obj: O, paths: Array<Path<O>>) {
+//   return deepOmitUnsafe(obj, paths)
+// }
