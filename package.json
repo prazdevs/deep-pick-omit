@@ -29,12 +29,14 @@
     "lint": "eslint .",
     "prepublishOnly": "pnpm build",
     "release": "bumpp",
-    "test": "vitest",
+    "test": "vitest --typecheck",
+    "test:ui": "vitest --typecheck --ui",
     "typecheck": "tsc --noEmit",
     "prepare": "simple-git-hooks"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.4.0",
+    "@vitest/ui": "^1.0.4",
     "bumpp": "^9.2.0",
     "eslint": "^8.55.0",
     "lint-staged": "^15.2.0",
