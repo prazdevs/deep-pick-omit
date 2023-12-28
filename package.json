@@ -30,12 +30,14 @@
     "prepublishOnly": "pnpm build",
     "release": "bumpp",
     "test": "vitest --typecheck",
+    "test:coverage": "vitest run --coverage",
     "test:ui": "vitest --typecheck --ui",
     "typecheck": "tsc --noEmit",
     "prepare": "simple-git-hooks"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.6.1",
+    "@vitest/coverage-v8": "^1.1.0",
     "@vitest/ui": "^1.1.0",
     "bumpp": "^9.2.1",
     "eslint": "^8.56.0",
