@@ -1,9 +1,25 @@
 import { get, set, unset } from './utils'
 
-export type Path<O, K extends keyof O = keyof O> = K extends string | number
-  ? O[K] extends infer V
-    ? `${K}`| (V extends Record<string, unknown> ? `${K}.${Path<V>}` : never)
-    : never
+type IsAny<T> = unknown extends T ? ([keyof T] extends [never] ? false : true) : false
+
+type ExcludeArrayKeys<T> = T extends ArrayLike<any> ? Exclude<keyof T, keyof any[]> : keyof T
+
+type PathImpl<T, Key extends keyof T> = Key extends string
+  ? IsAny<T[Key]> extends true
+    ? never
+    : T[Key] extends Record<string, any>
+      ?
+      | `${Key}.${PathImpl<T[Key], ExcludeArrayKeys<T[Key]>> & string}`
+      | `${Key}.${ExcludeArrayKeys<T[Key]> & string}`
+      : never
+  : never
+
+export type Path<T> = keyof T extends string
+  ? (PathImpl<T, keyof T> | keyof T) extends infer P
+      ? P extends string | keyof T
+        ? P
+        : keyof T
+      : keyof T
   : never
 
 export function deepPickUnsafe(obj: object, paths: Array<string>) {
