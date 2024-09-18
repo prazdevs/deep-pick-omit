@@ -26,7 +26,7 @@ export function deepPickUnsafe(obj: object, paths: Array<string>) {
   return paths
     .map(p => p.split('.'))
     .map<[string[], unknown]>(p => [p, get(obj, p)])
-    .filter(t => !!t[1])
+    .filter(t => t[1] !== undefined)
     .reduce((acc, cur) => set(acc, cur[1], cur[0]), {})
 }
 
