@@ -1,10 +1,10 @@
 import { expectTypeOf, test } from 'vitest'
 import {
-  type Path,
   deepOmit,
   deepOmitUnsafe,
   deepPick,
   deepPickUnsafe,
+  type Path,
 } from '../src/index'
 
 const o = {

@@ -24,8 +24,8 @@ export function set(obj: object, value: any, path: Array<string | number>) {
   if (path.length > 1) {
     value = set(
       typeof obj !== 'object'
-        || obj === null
-        || !Object.prototype.hasOwnProperty.call(obj, idx)
+      || obj === null
+      || !Object.prototype.hasOwnProperty.call(obj, idx)
         ? Number.isInteger(Number(path[1]))
           ? []
           : {}
