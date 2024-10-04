@@ -1,5 +1,22 @@
 # Changelog
 
+## v1.2.1
+
+[compare changes](https://github.com/prazdevs/deep-pick-omit/compare/v1.2.0...v1.2.0)
+
+### 🩹 Fixes
+
+- Only filter out undefined values in deepPickUnsafe ([799a2e1](https://github.com/prazdevs/deep-pick-omit/commit/799a2e1))
+
+### 🏡 Chore
+
+- Upgrade dependencies ([cec8ad3](https://github.com/prazdevs/deep-pick-omit/commit/cec8ad3))
+
+### ❤️ Contributors
+
+- Prazdevs ([@prazdevs](https://github.com/prazdevs))
+- Jim Cronqvist <jim.cronqvist@gmail.com>
+
 ## v1.2.0
 
 [compare changes](https://github.com/prazdevs/deep-pick-omit/compare/v1.1.0...v1.2.0)
