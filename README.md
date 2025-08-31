@@ -1,3 +1,7 @@
+> [!IMPORTANT]
+> This project has a new home at [`codeberg.org/praz/deep-pick-omit`](https://codeberg.org/praz/deep-pick-omit/).
+> Everything (issues included) has been migrated and development/maintenance will continue over there.
+
 # deep-pick-omit
 
 [![npm version][version-src]][version-href]

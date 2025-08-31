@@ -4,9 +4,12 @@
   "version": "1.2.1",
   "packageManager": "pnpm@9.12.0",
   "description": "Deep-pick and deep-omit objects with typesafe paths.",
-  "author": "PraZ",
+  "author": "praz (https://praz.me)",
   "license": "MIT",
-  "repository": "github:prazdevs/deep-pick-omit",
+  "repository": {
+    "type": "git",
+    "url": "git+https://codeberg.org/praz/deep-pick-omit.git"
+  },
   "sideEffects": false,
   "exports": {
     ".": {
